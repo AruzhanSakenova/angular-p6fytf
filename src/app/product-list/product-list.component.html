@@ -5,6 +5,13 @@
     <a [title]="product.name + ' details'" href="{{product.kaspilink}}">
       {{ product.name }}
     </a>
+
+    <a
+    [title]="product.name + ' details'"
+    [routerLink]="['/products', product.id]">
+    {{ "information" }} 
+  </a>
+
   </h3>
   <img src="{{product.imageSrc}}" />
   <p *ngIf="product.description" >
@@ -18,7 +25,7 @@
   <span id="Butt">
   <a [href] = "'https://telegram.me/share/url?url=' + product.kaspilink " target="_blank">
   <button type="button" (click)="share()">
-    Share
+    Telegram
   </button>
   </a>
     <a [href] = "'https://web.whatsapp.com/send?text=' + product.kaspilink">
